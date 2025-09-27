@@ -1,0 +1,49 @@
+.slot-selection-content {
+	max-width: 420px;
+	margin: 40px auto;
+	padding: 28px 32px;
+	background: #e0f7fa;
+	border-radius: 10px;
+	box-shadow: 0 2px 12px rgba(0,128,128,0.10);
+	text-align: center;
+}
+
+.slot-selection-content h2 {
+	color: #008080;
+	margin-bottom: 18px;
+}
+
+.slot-form label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: 500;
+	color: #006666;
+}
+
+.slot-form input[type="datetime-local"] {
+	width: 100%;
+	padding: 9px;
+	border: 1px solid #008080;
+	border-radius: 5px;
+	font-size: 1rem;
+	box-sizing: border-box;
+	background: #ffffff;
+	margin-bottom: 18px;
+}
+
+.confirm-btn {
+	background: #008080;
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	padding: 12px 0;
+	width: 100%;
+	font-size: 1.1rem;
+	font-weight: 600;
+	cursor: pointer;
+	margin-top: 8px;
+	transition: background 0.2s;
+}
+.confirm-btn:hover {
+	background: #006666;
+}

@@ -1,0 +1,52 @@
+<form class="appointment-form">
+	<h2>Patient Demographics Details</h2>
+	<div>
+		<label for="patientName">Name:</label>
+		<input id="patientName" name="patientName" type="text" required />
+	</div>
+	<div>
+		<label for="patientAge">Age:</label>
+		<input id="patientAge" name="patientAge" type="number" required />
+	</div>
+	<div>
+		<label for="patientGender">Gender:</label>
+		<select id="patientGender" name="patientGender" required>
+			<option value="">Select</option>
+			<option value="Male">Male</option>
+			<option value="Female">Female</option>
+			<option value="Other">Other</option>
+		</select>
+	</div>
+
+	<h2>Physician</h2>
+	<div>
+		<label for="physician">Physician:</label>
+		<input id="physician" name="physician" type="text" required />
+	</div>
+
+	<h2>Provider</h2>
+	<div>
+		<label for="provider">Provider:</label>
+		<input id="provider" name="provider" type="text" required />
+	</div>
+
+	<h2>Appointment Date</h2>
+	<div>
+		<label for="appointmentDate">Date:</label>
+		<input id="appointmentDate" name="appointmentDate" type="date" required />
+	</div>
+
+	<h2>Exam Selection</h2>
+	<div>
+		<label for="exam">Exam:</label>
+		<select id="exam" name="exam" required>
+			<option value="">Select Exam</option>
+			<option value="MRI">MRI</option>
+			<option value="CT">CT</option>
+			<option value="X-Ray">X-Ray</option>
+			<option value="Ultrasound">Ultrasound</option>
+		</select>
+	</div>
+
+	<button type="button" (click)="goToAppointmentBookingPage()">Next</button>
+</form>
