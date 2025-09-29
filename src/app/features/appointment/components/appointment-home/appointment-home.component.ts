@@ -15,4 +15,6 @@ export class AppointmentHomeComponent {
     console.log('Navigating to form page');
     this.router.navigate(['appointments/form']);
   }
+
+  
 }
