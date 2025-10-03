@@ -2,15 +2,15 @@
 	<h2>Patient Demographics Details</h2>
 	<div>
 		<label for="patientName">Name:</label>
-		<input id="patientName" name="patientName" type="text" required />
+		<input id="patientName" name="patientName" type="text" required [(ngModel)]="appointmentData.patientName" />
 	</div>
 	<div>
 		<label for="patientAge">Age:</label>
-		<input id="patientAge" name="patientAge" type="number" required />
+		<input id="patientAge" name="patientAge" type="number" required [(ngModel)]="appointmentData.patientAge" />
 	</div>
 	<div>
 		<label for="patientGender">Gender:</label>
-		<select id="patientGender" name="patientGender" required>
+		<select id="patientGender" name="patientGender" required [(ngModel)]="appointmentData.patientGender">
 			<option value="">Select</option>
 			<option value="Male">Male</option>
 			<option value="Female">Female</option>
@@ -21,25 +21,25 @@
 	<h2>Physician</h2>
 	<div>
 		<label for="physician">Physician:</label>
-		<input id="physician" name="physician" type="text" required />
+		<input id="physician" name="physician" type="text" required [(ngModel)]="appointmentData.physician" />
 	</div>
 
 	<h2>Provider</h2>
 	<div>
 		<label for="provider">Provider:</label>
-		<input id="provider" name="provider" type="text" required />
+		<input id="provider" name="provider" type="text" required [(ngModel)]="appointmentData.provider" />
 	</div>
 
 	<h2>Appointment Date</h2>
 	<div>
 		<label for="appointmentDate">Date:</label>
-		<input id="appointmentDate" name="appointmentDate" type="date" required />
+		<input id="appointmentDate" name="appointmentDate" type="date" required [(ngModel)]="appointmentData.appointmentDate" />
 	</div>
 
 	<h2>Exam Selection</h2>
 	<div>
 		<label for="exam">Exam:</label>
-		<select id="exam" name="exam" required>
+		<select id="exam" name="exam" required [(ngModel)]="appointmentData.exam">
 			<option value="">Select Exam</option>
 			<option value="MRI">MRI</option>
 			<option value="CT">CT</option>

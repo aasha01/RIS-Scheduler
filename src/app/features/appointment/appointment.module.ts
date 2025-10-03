@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppointmentRoutingModule } from './appointment-routing.module';
 import { AppointmentHomeComponent } from './components/appointment-home/appointment-home.component';
@@ -17,7 +20,9 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
   ],
   imports: [
     CommonModule,
-    AppointmentRoutingModule
+    AppointmentRoutingModule,
+    HttpClientModule,
+    FormsModule
   ]
 })
 export class AppointmentModule { }

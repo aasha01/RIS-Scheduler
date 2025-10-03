@@ -2,7 +2,7 @@
 	<h2>Select Appointment Slot</h2>
 	<form class="slot-form">
 		<label for="appointmentDateTime">Choose Date & Time:</label>
-		<input id="appointmentDateTime" name="appointmentDateTime" type="datetime-local" required />
+		<input id="appointmentDateTime" name="appointmentDateTime" type="datetime-local" required [(ngModel)]="slotDateTime" />
 		<button type="button" class="confirm-btn" (click)="bookAppointment()">Confirm Booking</button>
 	</form>
 </div>

@@ -1,8 +1,40 @@
 <main class="home-content">
-	<section class="intro-section">
-		<h2>Welcome!</h2>
-		<p>Book your medical appointments easily and quickly.</p>
-		<button class="book-btn" (click)="goToForm()">Book Appointment</button>
+		<section class="intro-section">
+		<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+			<h2 style="margin: 0;">Appointments</h2>
+			<button class="book-btn" (click)="goToForm()">Book Appointment</button>
+		</div>
+		<div *ngIf="loading" style="text-align:center; margin: 24px 0;">Loading appointments...</div>
+		<div *ngIf="error" style="color: red; text-align:center; margin: 24px 0;">{{ error }}</div>
+		<div *ngIf="!loading && !error">
+			<table style="width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 2px 12px rgba(0,128,128,0.08); margin: 0;">
+				<thead style="background: #008080; color: #fff;">
+					<tr>
+						<th style="padding: 12px;">Patient Name</th>
+						<th style="padding: 12px;">Age</th>
+						<th style="padding: 12px;">Gender</th>
+						<th style="padding: 12px;">Physician</th>
+						<th style="padding: 12px;">Provider</th>
+						<th style="padding: 12px;">Exam</th>
+						<th style="padding: 12px;">Appointment Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let appt of appointments">
+						<td style="padding: 12px;">{{ appt.patient.firstName }} {{ appt.patient.lastName }}</td>
+						<td style="padding: 12px;">{{ appt.patient.age }}</td>
+						<td style="padding: 12px;">{{ appt.patient.gender }}</td>
+						<td style="padding: 12px;">{{ appt.physician }}</td>
+						<td style="padding: 12px;">{{ appt.provider }}</td>
+						<td style="padding: 12px;">{{ appt.exam }}</td>
+						<td style="padding: 12px;">{{ appt.appointmentDate | date:'mediumDate' }}</td>
+					</tr>
+					<tr *ngIf="appointments.length === 0">
+						<td colspan="7" style="text-align:center; padding: 24px; color: #888;">No appointments found.</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</section>
 </main>
 

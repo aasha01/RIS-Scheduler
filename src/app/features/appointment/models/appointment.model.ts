@@ -1,4 +1,5 @@
 
+import { Timestamp } from 'rxjs';
 import { Patient } from './patient.model';
 
 export interface Appointment {

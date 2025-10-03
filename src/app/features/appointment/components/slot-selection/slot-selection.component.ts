@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { Appointment } from '../../models/appointment.model';
+import { AppointmentService } from '../../services/appointment.service';
 @Component({
   selector: 'app-slot-selection',
   standalone: false,
@@ -8,12 +9,32 @@ import { Router } from '@angular/router';
   styleUrl: './slot-selection.component.css'
 })
 export class SlotSelectionComponent {
-  constructor(private router: Router) {}  
 
-  bookAppointment() {
-    console.log('Appointment slot booked!');
-    // Here you would typically handle the booking logic, e.g., saving to a database or calling an API.
-    //navigate to confirmation page
-    this.router.navigate(['/appointments/confirm']);
-  }
+  loading = false;
+    error: string | null = null;
+  appointment: Appointment | null = null;
+  slotDateTime: string = '';
+  
+    constructor(private router: Router, private appointmentService: AppointmentService) {}
+  
+
+    // Book appointment using the current appointment from the service and selected slot
+    bookAppointment() {
+      // Get the current appointment from the service
+      const current = this.appointmentService.getCurrentAppointment();
+      if (!current) {
+        this.error = 'No appointment data to save.';
+        return;
+      }
+      // Set the slotDateTime in the service
+      this.appointmentService.setSlotData(this.slotDateTime);
+      this.loading = true;
+      this.error = null;
+      // Save the appointment
+      this.appointmentService.saveAppointment();
+      this.appointmentService.loadAppointments();
+      this.loading = false;
+      this.router.navigate(['/appointments']);
+      console.log('Completed booking');
+    }
 }
