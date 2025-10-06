@@ -3,6 +3,7 @@ import { Timestamp } from 'rxjs';
 import { Patient } from './patient.model';
 
 export interface Appointment {
+  id?: string | number;
   patient: Patient;  
   physician: string;
   provider: string;

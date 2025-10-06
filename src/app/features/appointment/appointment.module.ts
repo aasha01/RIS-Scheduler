@@ -10,6 +10,8 @@ import { AppointmentFormComponent } from './components/appointment-form/appointm
 import { SlotSelectionComponent } from './components/slot-selection/slot-selection.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
     CommonModule,
     AppointmentRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    MatButtonModule
   ]
 })
 export class AppointmentModule { }

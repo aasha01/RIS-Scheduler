@@ -7,6 +7,7 @@ import { Patient } from '../models/patient.model';
 @Injectable({ providedIn: 'root' })
 
 export class AppointmentService {
+  
   private apiUrl = 'http://localhost:8081/appointments'; // Change to your actual backend URL
 
   private currentAppointmentSubject = new BehaviorSubject<Appointment>({
@@ -90,5 +91,9 @@ export class AppointmentService {
         this.loading = false;
       }
     });
+  }
+
+  deleteAppointment(id: string | number): Observable<string> {
+    return this.http.delete(`${this.apiUrl}/${id}`, { responseType: 'text' });
   }
 }

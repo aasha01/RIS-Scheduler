@@ -17,6 +17,7 @@
 						<th style="padding: 12px;">Provider</th>
 						<th style="padding: 12px;">Exam</th>
 						<th style="padding: 12px;">Appointment Date</th>
+						<th style="padding: 12px;">Delete</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -28,9 +29,14 @@
 						<td style="padding: 12px;">{{ appt.provider }}</td>
 						<td style="padding: 12px;">{{ appt.exam }}</td>
 						<td style="padding: 12px;">{{ appt.appointmentDate | date:'mediumDate' }}</td>
+						<td style="padding: 12px; text-align: center;">
+							<button mat-icon-button color="primary" (click)="deleteAppointment(appt.id)" style="color: teal;">
+							  <mat-icon>delete</mat-icon>
+							</button>
+						</td>
 					</tr>
 					<tr *ngIf="appointments.length === 0">
-						<td colspan="7" style="text-align:center; padding: 24px; color: #888;">No appointments found.</td>
+						<td colspan="8" style="text-align:center; padding: 24px; color: #888;">No appointments found.</td>
 					</tr>
 				</tbody>
 			</table>
